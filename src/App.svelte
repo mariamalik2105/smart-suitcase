@@ -1,89 +1,111 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from './assets/vite.svg'
-  import heroImg from './assets/hero.png'
-  import Counter from './lib/Counter.svelte'
+  let showInfo = false;
 </script>
 
-<section id="center">
-  <div class="hero">
-    <img src={heroImg} class="base" width="170" height="179" alt="" />
-    <img src={svelteLogo} class="framework" alt="Svelte logo" />
-    <img src={viteLogo} class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/App.svelte</code> and save to test <code>HMR</code></p>
-  </div>
-  <Counter />
-</section>
+<main class="page">
+  <section class="device-section">
+    <h2>Device UI</h2>
 
-<div class="ticks"></div>
+    <div class="suitcase">
+      <div class="handle"></div>
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true">
-      <use href="/icons.svg#documentation-icon"></use>
-    </svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank" rel="noreferrer">
-          <img class="logo" src={viteLogo} alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://svelte.dev/" target="_blank" rel="noreferrer">
-          <img class="button-icon" src={svelteLogo} alt="" />
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true">
-      <use href="/icons.svg#social-icon"></use>
-    </svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li>
-        <a href="https://github.com/vitejs/vite" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#github-icon"></use>
-          </svg>
-          GitHub
-        </a>
-      </li>
-      <li>
-        <a href="https://chat.vite.dev/" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#discord-icon"></use>
-          </svg>
-          Discord
-        </a>
-      </li>
-      <li>
-        <a href="https://x.com/vite_js" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#x-icon"></use>
-          </svg>
-          X.com
-        </a>
-      </li>
-      <li>
-        <a href="https://bsky.app/profile/vite.dev" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#bluesky-icon"></use>
-          </svg>
-          Bluesky
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
+      <div class="weight-display">
+        Weight: 21.4 kg / 23 kg
+      </div>
 
-<div class="ticks"></div>
-<section id="spacer"></section>
+      <div class="main-display">
+        <h3>SmartCase</h3>
+
+        <p class="status">Trip Ready</p>
+
+        <div class="info-row">
+          <span>Weight</span>
+          <strong>21.4 kg</strong>
+        </div>
+
+        <div class="info-row">
+          <span>Lock</span>
+          <strong>Locked</strong>
+        </div>
+
+        <div class="info-row">
+          <span>Battery</span>
+          <strong>82%</strong>
+        </div>
+
+        <hr />
+
+        <h4>Packing Items</h4>
+
+        <p>✓ Passport</p>
+        <p>✓ Charger</p>
+        <p>✓ Toiletries</p>
+        <p class="warning">⚠ Headphones missing</p>
+
+        <p class="bluetooth">Bluetooth Connected</p>
+      </div>
+
+      <div class="side-panel">
+        <button>🔒</button>
+        <button>✈</button>
+        <button>⌖</button>
+        <div class="usb">USB-C</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testing-section">
+    <h1>SmartCase</h1>
+    <p class="subtitle">Smart Suitcase Interface</p>
+
+    <p><strong>Maria Malik</strong></p>
+
+    <a href="#" class="writeup-link">
+      Project Write-Up
+    </a>
+
+    <h3>About the Project</h3>
+
+    <p>
+      SmartCase is a smart suitcase designed to make travel easier
+      through weight monitoring, packing reminders, security controls,
+      tracking, and smart movement features.
+    </p>
+
+    <h3>Testing Controls</h3>
+
+    <div class="testing-buttons">
+      <button>Add Weight</button>
+      <button>Remove Weight</button>
+
+      <button>Remove Item</button>
+      <button>Add Item</button>
+
+      <button>Lock</button>
+      <button>Unlock</button>
+
+      <button>Connect Phone</button>
+      <button>Disconnect Phone</button>
+    </div>
+
+    <button
+      class="info-button"
+      onclick={() => showInfo = !showInfo}
+    >
+      ℹ Info
+    </button>
+
+    {#if showInfo}
+      <div class="info-box">
+        <strong>How to test SmartCase</strong>
+
+        <p>
+          Use the buttons above to simulate changes to the suitcase.
+          The Device UI will respond to actions such as changing its
+          weight, removing packed items, locking the suitcase, and
+          connecting a phone.
+        </p>
+      </div>
+    {/if}
+  </section>
+</main>
