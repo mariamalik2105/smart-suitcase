@@ -1,8 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
   background: #f3f4f6;
   color: #1f2937;
+
+  overflow-x: auto;
+}
+
+button,
+a {
+  font: inherit;
 }
 
 button {
@@ -10,52 +26,91 @@ button {
 }
 
 button:disabled {
-  opacity: 0.45;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 
-/* MAIN PAGE */
+/* ======================================================
+   PAGE
+====================================================== */
 
 .page {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+
+  grid-template-columns:
+    600px
+    minmax(850px, 1fr);
+
   min-height: 100vh;
+  min-width: 1450px;
 }
 
 
-/* DEVICE SIDE */
+/* ======================================================
+   DEVICE SECTION
+====================================================== */
 
 .device-section {
-  padding: 40px;
-  background: #e5e7eb;
+  padding: 40px 50px 80px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e5e7eb,
+      #d1d5db
+    );
 }
 
-.device-section h2 {
-  margin-top: 0;
+.section-heading {
+  margin-bottom: 80px;
+}
+
+.section-heading h2 {
+  margin: 3px 0 0;
+
+  font-size: 30px;
+}
+
+.eyebrow {
+  margin: 0;
+
+  font-size: 11px;
+
+  letter-spacing: 0.15em;
+
+  font-weight: 700;
+
+  color: #64748b;
 }
 
 
-/* SUITCASE */
+/* ======================================================
+   SUITCASE BODY
+====================================================== */
 
 .suitcase {
-  width: 430px;
-  height: 670px;
-
-  margin: 60px auto 30px;
-
-  background: #202020;
-
-  border-radius: 28px;
-
   position: relative;
 
-  padding: 35px;
+  width: 470px;
+  height: 720px;
 
-  box-sizing: border-box;
+  margin: 0 auto;
+
+  padding: 30px;
+
+  border-radius: 34px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #242424,
+      #111111
+    );
 
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.25);
+    0 28px 55px
+    rgba(0, 0, 0, 0.3);
 }
 
 
@@ -64,33 +119,54 @@ button:disabled {
 .handle {
   position: absolute;
 
-  width: 150px;
-  height: 120px;
-
-  border: 12px solid #252525;
-  border-bottom: none;
+  width: 160px;
+  height: 125px;
 
   top: -115px;
-  left: 125px;
+  left: 155px;
 
-  border-radius: 18px 18px 0 0;
+  border:
+    13px solid #222;
+
+  border-bottom: none;
+
+  border-radius:
+    18px 18px 0 0;
 }
 
 
-/* TOP WEIGHT DISPLAY */
+/* ======================================================
+   TOP WEIGHT DISPLAY
+====================================================== */
 
 .weight-display {
-  background: #111827;
+  height: 48px;
+
+  padding: 0 16px;
+
+  border-radius: 10px;
+
+  background: #0f172a;
 
   color: white;
 
-  padding: 12px;
+  display: flex;
 
-  border-radius: 8px;
+  align-items: center;
 
-  text-align: center;
+  justify-content: space-between;
 
-  margin-bottom: 20px;
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.weight-display span {
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+
+  color: #94a3b8;
 }
 
 .overweight-display {
@@ -98,165 +174,371 @@ button:disabled {
 }
 
 
-/* MAIN SMART DISPLAY */
+/* ======================================================
+   FRONT DISPLAY
+====================================================== */
 
 .main-display {
-  background: #111827;
+  height: 565px;
 
-  color: white;
-
-  border-radius: 16px;
+  margin-top: 18px;
 
   padding: 22px;
 
-  box-sizing: border-box;
+  border-radius: 20px;
 
-  height: 525px;
+  background:
+    linear-gradient(
+      165deg,
+      #111827,
+      #020617
+    );
 
-  overflow-y: auto;
+  color: white;
+
+  overflow: hidden;
+
+  transition: 0.25s;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06);
 }
 
-.main-display h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-
-.main-display h4 {
-  margin-top: 14px;
-  margin-bottom: 6px;
+.finding-screen {
+  box-shadow:
+    inset 0 0 0 2px #60a5fa,
+    0 0 20px rgba(96, 165, 250, 0.35);
 }
 
 
-/* STATUS */
+/* SCREEN HEADER */
+
+.screen-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.screen-brand {
+  margin: 0 0 7px;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+.mode-badge {
+  display: inline-block;
+
+  padding:
+    4px 7px;
+
+  border-radius: 5px;
+
+  background: #1d4ed8;
+
+  color: white;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+.battery-mini {
+  padding:
+    5px 8px;
+
+  border-radius: 6px;
+
+  background: #1f2937;
+
+  font-size: 12px;
+}
+
+
+/* MAIN STATUS */
 
 .status {
+  margin:
+    16px 0 12px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.ready-status {
   color: #4ade80;
-
-  font-weight: bold;
-
-  font-size: 19px;
-
-  margin-top: 6px;
 }
 
-.overweight-status {
-  color: #f87171;
-}
-
-.packing-status {
+.warning-status {
   color: #fb923c;
 }
 
+.danger-status {
+  color: #f87171;
+}
 
-/* INFO ROW */
 
-.info-row {
+/* DATA ROW */
+
+.data-row {
   display: flex;
 
   justify-content: space-between;
 
-  margin: 11px 0;
+  margin-bottom: 7px;
+
+  font-size: 14px;
 }
 
 
-/* WEIGHT FEEDBACK */
+/* WEIGHT BAR */
 
-.weight-warning {
-  background: #451a1a;
+.weight-bar {
+  height: 7px;
 
-  color: #fca5a5;
+  overflow: hidden;
 
-  padding: 8px;
+  border-radius: 20px;
+
+  background: #334155;
+}
+
+.weight-bar-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #4ade80;
+
+  transition:
+    width 0.3s;
+}
+
+.bar-danger {
+  background: #ef4444;
+}
+
+.small-alert {
+  margin:
+    6px 0 12px;
+
+  font-size: 11px;
+}
+
+.safe-text,
+.good-text {
+  color: #4ade80;
+}
+
+.danger-text {
+  color: #f87171;
+}
+
+
+/* STATUS CARDS */
+
+.status-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 8px;
+}
+
+.status-card {
+  padding: 9px;
 
   border-radius: 8px;
 
-  margin: 8px 0;
+  background: #1e293b;
 
-  font-size: 13px;
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
 }
 
-.weight-safe {
-  color: #4ade80;
+.status-card span {
+  color: #94a3b8;
 
-  margin: 7px 0;
+  font-size: 10px;
+}
 
-  font-size: 13px;
+.status-card strong {
+  font-size: 12px;
+}
+
+
+/* DIVIDER */
+
+.divider {
+  height: 1px;
+
+  margin:
+    13px 0;
+
+  background: #334155;
 }
 
 
 /* PACKING */
 
-.packing-count {
-  color: #9ca3af;
+.packing-heading {
+  display: flex;
 
-  font-size: 13px;
+  justify-content: space-between;
 
-  margin-top: 4px;
-  margin-bottom: 8px;
+  align-items: center;
+
+  margin-bottom: 9px;
 }
 
-.packing-list p {
-  margin: 7px 0;
+.packing-heading h4 {
+  margin: 0;
+
+  font-size: 14px;
 }
 
-.packed-item {
-  color: white;
+.packing-heading span {
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.packing-list {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 7px;
+}
+
+.packing-item {
+  padding:
+    8px;
+
+  border-radius: 7px;
+
+  background: #172033;
+
+  font-size: 11px;
+
+  display: flex;
+
+  gap: 6px;
+
+  align-items: center;
 }
 
 .missing-item {
   color: #fb923c;
+
+  background: #431407;
 }
 
 
-/* BLUETOOTH */
+/* SCREEN FOOTER */
 
-.bluetooth {
-  margin-top: 16px;
-
-  color: #60a5fa;
-
+.screen-footer {
   display: flex;
+
+  justify-content: space-between;
 
   align-items: center;
 
-  gap: 8px;
+  margin-top: 15px;
+
+  padding-top: 12px;
+
+  border-top:
+    1px solid #334155;
+}
+
+.bluetooth-status {
+  display: flex;
+
+  gap: 6px;
+
+  align-items: center;
+
+  color: #60a5fa;
+
+  font-size: 11px;
+}
+
+.bluetooth-status.disconnected {
+  color: #94a3b8;
 }
 
 .bluetooth-icon {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
+}
+
+.location-mini {
+  max-width: 145px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #cbd5e1;
+
+  font-size: 10px;
 }
 
 
-/* SIDE PANEL */
+/* ======================================================
+   SIDE HARDWARE PANEL
+====================================================== */
 
 .side-panel {
   position: absolute;
 
-  right: -55px;
+  right: -58px;
+  top: 210px;
 
-  top: 190px;
+  width: 58px;
 
-  width: 55px;
+  padding:
+    10px;
 
-  background: #151515;
+  border-radius:
+    0 14px 14px 0;
 
-  padding: 10px;
+  background: #090909;
 
-  border-radius: 0 12px 12px 0;
-
-  box-sizing: border-box;
+  box-shadow:
+    8px 8px 18px
+    rgba(0, 0, 0, 0.25);
 }
 
-.side-panel button {
-  width: 35px;
-  height: 45px;
+.physical-button {
+  width: 38px;
+  height: 46px;
 
-  margin-bottom: 8px;
-}
+  margin-bottom: 9px;
 
-.find-button {
-  font-size: 30px;
+  padding: 0;
+
+  border:
+    1px solid #444;
+
+  border-radius: 7px;
+
+  background: #202020;
+
+  color: white;
 
   display: flex;
 
@@ -265,59 +547,249 @@ button:disabled {
   justify-content: center;
 }
 
-.usb {
-  color: white;
+.physical-button:hover {
+  background: #343434;
+}
 
-  font-size: 10px;
+.active-control {
+  background: #1d4ed8;
+}
+
+.find-button {
+  font-size: 26px;
+}
+
+.find-active {
+  background: #075985;
+
+  box-shadow:
+    0 0 14px
+    rgba(56, 189, 248, 0.8);
+}
+
+.usb-port {
+  margin-top: 4px;
+
+  padding:
+    9px 2px;
+
+  border-radius: 5px;
+
+  border:
+    1px solid #555;
+
+  color: #cbd5e1;
 
   text-align: center;
 
-  margin-top: 10px;
+  font-size: 8px;
+}
+
+.usb-active {
+  color: #facc15;
+
+  border-color: #facc15;
 }
 
 
-/* TESTING SIDE */
+/* WHEELS */
+
+.wheel {
+  position: absolute;
+
+  bottom: -22px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #111;
+
+  border:
+    6px solid #2d2d2d;
+}
+
+.wheel-left {
+  left: 55px;
+}
+
+.wheel-right {
+  right: 55px;
+}
+
+
+/* ======================================================
+   TESTING SECTION
+====================================================== */
 
 .testing-section {
-  padding: 40px;
+  padding:
+    42px 50px 80px;
 
   background: white;
 }
 
-.testing-section h1 {
-  margin-bottom: 5px;
+
+/* HEADER */
+
+.project-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 30px;
+}
+
+.project-header h1 {
+  margin:
+    4px 0;
+
+  font-size: 42px;
 }
 
 .subtitle {
-  font-size: 20px;
+  margin:
+    0;
 
-  color: #6b7280;
+  font-size: 19px;
 
-  margin-top: 0;
+  color: #64748b;
+}
+
+.student-name {
+  margin:
+    11px 0 0;
+
+  font-weight: 600;
 }
 
 .writeup-link {
-  display: inline-block;
+  padding:
+    10px 14px;
 
-  margin-bottom: 25px;
+  border:
+    1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  color: #1f2937;
+
+  font-size: 13px;
+}
+
+.writeup-link:hover {
+  background: #f8fafc;
+}
+
+.project-description {
+  max-width: 800px;
+
+  margin:
+    22px 0;
+
+  color: #475569;
+
+  line-height: 1.55;
 }
 
 
-/* TESTING BUTTONS */
+/* NOTICE */
 
-.testing-buttons {
+.notice {
+  margin-bottom: 28px;
+
+  padding:
+    13px 16px;
+
+  border-radius: 9px;
+
+  background: #eff6ff;
+
+  color: #1e40af;
+
+  font-size: 13px;
+}
+
+
+/* RIGHT GRID */
+
+.right-grid {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    minmax(480px, 1fr)
+    330px;
 
-  gap: 12px;
+  gap: 35px;
 
-  margin: 20px 0 30px;
+  align-items: start;
 }
 
-.testing-buttons button,
+
+/* ======================================================
+   TESTING CONTROLS
+====================================================== */
+
+.control-section {
+  margin-bottom: 22px;
+
+  padding: 18px;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 13px;
+
+  background: #fff;
+}
+
+.control-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 13px;
+}
+
+.control-heading h3 {
+  margin: 0;
+
+  font-size: 15px;
+}
+
+.control-heading span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* BUTTONS */
+
+.button-grid,
+.scenario-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 9px;
+}
+
+.button-grid button,
+.scenario-grid button,
+.mini-button-row button,
+.item-buttons button,
 .info-button {
-  padding: 12px;
+  padding:
+    10px 12px;
 
   border: none;
 
@@ -326,22 +798,537 @@ button:disabled {
   background: #1f2937;
 
   color: white;
+
+  transition: 0.15s;
+
+  font-size: 12px;
 }
 
-.testing-buttons button:hover:not(:disabled),
+.button-grid button:hover:not(:disabled),
+.scenario-grid button:hover:not(:disabled),
+.mini-button-row button:hover:not(:disabled),
+.item-buttons button:hover:not(:disabled),
 .info-button:hover {
   background: #374151;
 }
 
 
-/* INFO BOX */
+/* SCENARIOS */
 
-.info-box {
-  margin-top: 20px;
+.scenario-active {
+  background: #2563eb !important;
+}
 
-  padding: 15px;
+
+/* PACKING BUTTONS */
+
+.item-buttons {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 8px;
+}
+
+.item-present {
+  background: #166534 !important;
+}
+
+.item-missing {
+  background: #9a3412 !important;
+}
+
+.mini-button-row {
+  display: flex;
+
+  gap: 9px;
+
+  margin-top: 10px;
+}
+
+.active-button {
+  background: #1d4ed8 !important;
+}
+
+
+/* ======================================================
+   SIMULATION
+====================================================== */
+
+.simulation-box {
+  padding: 13px;
 
   border-radius: 8px;
 
-  background: #f3f4f6;
+  background: #f8fafc;
+}
+
+.simulation-box p {
+  margin:
+    0 0 9px;
+
+  min-height: 32px;
+
+  color: #475569;
+
+  font-size: 12px;
+}
+
+.simulation-progress {
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #e2e8f0;
+}
+
+.simulation-progress-fill {
+  height: 100%;
+
+  background: #2563eb;
+
+  transition:
+    width 0.3s;
+}
+
+.simulation-box small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #94a3b8;
+}
+
+
+/* INFO */
+
+.info-button {
+  width: 100%;
+}
+
+.info-box {
+  margin-top: 12px;
+
+  padding: 15px;
+
+  border-radius: 9px;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ======================================================
+   PHONE UI
+====================================================== */
+
+.phone-area {
+  position: sticky;
+
+  top: 30px;
+}
+
+.phone-label {
+  margin:
+    0 0 10px;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+}
+
+.phone {
+  width: 310px;
+
+  padding:
+    12px;
+
+  border:
+    5px solid #161616;
+
+  border-radius: 38px;
+
+  background: #111;
+
+  box-shadow:
+    0 20px 35px
+    rgba(15, 23, 42, 0.25);
+}
+
+.phone-speaker {
+  width: 80px;
+  height: 6px;
+
+  margin:
+    4px auto 8px;
+
+  border-radius: 10px;
+
+  background: #333;
+}
+
+.phone-screen {
+  min-height: 565px;
+
+  padding:
+    17px;
+
+  border-radius:
+    27px;
+
+  background: #f8fafc;
+
+  color: #0f172a;
+}
+
+.phone-status-bar {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.phone-app-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin:
+    24px 0 10px;
+}
+
+.phone-app-header small {
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+}
+
+.phone-app-header h3 {
+  margin:
+    3px 0 0;
+
+  font-size: 20px;
+}
+
+.connection-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+.connection-off {
+  background: #94a3b8;
+}
+
+.phone-connection {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 13px;
+
+  color: #2563eb;
+
+  font-size: 10px;
+}
+
+.phone-connection svg {
+  width: 16px;
+  height: 16px;
+}
+
+.phone-disconnected {
+  color: #94a3b8;
+}
+
+
+/* MAP */
+
+.map-card {
+  position: relative;
+
+  height: 150px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #dbeafe;
+
+  border:
+    1px solid #bfdbfe;
+}
+
+.map-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.35;
+
+  background-image:
+    linear-gradient(
+      #60a5fa 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      #60a5fa 1px,
+      transparent 1px
+    );
+
+  background-size:
+    28px 28px;
+}
+
+.map-pin {
+  position: absolute;
+
+  left: 48%;
+  top: 40%;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    4px solid white;
+
+  box-shadow:
+    0 4px 12px
+    rgba(37, 99, 235, 0.4);
+}
+
+.map-finding .map-pin {
+  animation:
+    pulsePin 0.7s infinite alternate;
+}
+
+@keyframes pulsePin {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.25);
+  }
+}
+
+.map-info {
+  position: absolute;
+
+  left: 10px;
+  bottom: 10px;
+
+  padding:
+    7px 9px;
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-size: 9px;
+}
+
+.map-info span {
+  color: #64748b;
+}
+
+
+/* PHONE STATS */
+
+.phone-stat-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 8px;
+
+  margin:
+    11px 0;
+}
+
+.phone-stat-grid div {
+  padding:
+    10px;
+
+  border-radius: 9px;
+
+  background: white;
+
+  border:
+    1px solid #e2e8f0;
+}
+
+.phone-stat-grid span {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+.phone-stat-grid strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 13px;
+}
+
+
+/* PHONE BUTTONS */
+
+.phone-controls {
+  display: grid;
+
+  gap: 7px;
+}
+
+.phone-controls button {
+  padding:
+    10px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #1e293b;
+
+  color: white;
+
+  font-size: 11px;
+}
+
+.phone-controls button:hover:not(:disabled) {
+  background: #334155;
+}
+
+.follow-active {
+  background: #166534 !important;
+}
+
+
+/* FOLLOW CARD */
+
+.follow-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 10px;
+
+  padding:
+    10px;
+
+  border-radius: 9px;
+
+  background: #dcfce7;
+
+  color: #166534;
+}
+
+.follow-card div:last-child {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.follow-card strong {
+  font-size: 11px;
+}
+
+.follow-card span {
+  margin-top: 2px;
+
+  font-size: 8px;
+}
+
+.follow-pulse {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  animation:
+    followPulse 0.8s infinite alternate;
+}
+
+@keyframes followPulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.7);
+    opacity: 0.45;
+  }
+}
+
+
+/* USB CHARGING */
+
+.charging-banner {
+  margin-top: 10px;
+
+  padding: 8px;
+
+  border-radius: 7px;
+
+  background: #fef9c3;
+
+  color: #854d0e;
+
+  font-size: 9px;
+
+  text-align: center;
 }
