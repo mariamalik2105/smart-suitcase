@@ -31,9 +31,7 @@ button:disabled {
 }
 
 
-/* ======================================================
-   PAGE
-====================================================== */
+   /*PAGE*/
 
 .page {
   display: grid;
@@ -47,9 +45,8 @@ button:disabled {
 }
 
 
-/* ======================================================
-   DEVICE SECTION
-====================================================== */
+
+   /*DEVICE SECTION*/
 
 .device-section {
   padding: 40px 50px 80px;
@@ -85,9 +82,8 @@ button:disabled {
 }
 
 
-/* ======================================================
-   SUITCASE BODY
-====================================================== */
+
+   /*SUITCASE BODY*/
 
 .suitcase {
   position: relative;
@@ -135,9 +131,7 @@ button:disabled {
 }
 
 
-/* ======================================================
-   TOP WEIGHT DISPLAY
-====================================================== */
+   /*TOP WEIGHT DISPLAY*/
 
 .weight-display {
   height: 48px;
@@ -174,9 +168,8 @@ button:disabled {
 }
 
 
-/* ======================================================
-   FRONT DISPLAY
-====================================================== */
+ 
+   /*FRONT DISPLAY*/
 
 .main-display {
   height: 565px;
@@ -498,9 +491,8 @@ button:disabled {
 }
 
 
-/* ======================================================
-   SIDE HARDWARE PANEL
-====================================================== */
+   /* SIDE HARDWARE PANEL */
+
 
 .side-panel {
   position: absolute;
@@ -619,9 +611,8 @@ button:disabled {
 }
 
 
-/* ======================================================
-   TESTING SECTION
-====================================================== */
+   /* TESTING SECTION */
+
 
 .testing-section {
   padding:
@@ -731,9 +722,7 @@ button:disabled {
 }
 
 
-/* ======================================================
-   TESTING CONTROLS
-====================================================== */
+   /* TESTING CONTROLS */
 
 .control-section {
   margin-bottom: 22px;
@@ -852,9 +841,9 @@ button:disabled {
 }
 
 
-/* ======================================================
-   SIMULATION
-====================================================== */
+
+   /* SIMULATION */
+
 
 .simulation-box {
   padding: 13px;
@@ -930,9 +919,7 @@ button:disabled {
 }
 
 
-/* ======================================================
-   PHONE UI
-====================================================== */
+   /*PHONE UI */
 
 .phone-area {
   position: sticky;
@@ -1331,4 +1318,13 @@ button:disabled {
   font-size: 9px;
 
   text-align: center;
+}
+
+/* PROJECT LINKS */
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
 }

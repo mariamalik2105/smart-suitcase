@@ -10,8 +10,8 @@
     "Headphones"
   ];
 
-  // Replace this later with your actual public write-up link
-  const writeupUrl = "https://docs.google.com/document/d/REPLACE_ME";
+  const writeupUrl = "/SmartCase_Writeup.docx";
+  const demoUrl = "/SmartCase_Demo.webm";
 
   let showInfo = $state(false);
 
@@ -881,14 +881,27 @@
       </div>
 
 
-      <a
-        class="writeup-link"
-        href={writeupUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Project Write-Up ↗
-      </a>
+<div class="project-links">
+
+  <a
+    class="writeup-link"
+    href={writeupUrl}
+    target="_blank"
+    rel="noreferrer"
+  >
+    Project Write-Up ↗
+  </a>
+
+  <a
+    class="writeup-link"
+    href={demoUrl}
+    target="_blank"
+    rel="noreferrer"
+  >
+    Demo Video ▶
+  </a>
+
+</div>
 
     </header>
 
