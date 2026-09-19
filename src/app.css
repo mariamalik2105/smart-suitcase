@@ -61,6 +61,11 @@ button {
   margin-bottom: 30px;
 }
 
+.overweight-display {
+  background: #7f1d1d;
+  color: white;
+}
+
 .main-display {
   background: #111827;
   color: white;
@@ -79,10 +84,29 @@ button {
   font-size: 20px;
 }
 
+.overweight-status {
+  color: #f87171;
+}
+
 .info-row {
   display: flex;
   justify-content: space-between;
   margin: 16px 0;
+}
+
+.weight-warning {
+  background: #451a1a;
+  color: #fca5a5;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.weight-safe {
+  color: #4ade80;
+  margin: 10px 0;
+  font-size: 14px;
 }
 
 .warning {
@@ -92,6 +116,14 @@ button {
 .bluetooth {
   margin-top: 25px;
   color: #60a5fa;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bluetooth-icon {
+  width: 22px;
+  height: 22px;
 }
 
 .side-panel {
@@ -111,32 +143,18 @@ button {
   margin-bottom: 8px;
 }
 
-.usb {
-  color: white;
-  font-size: 10px;
-  text-align: center;
-  margin-top: 10px;
-}
-
 .find-button {
-  font-size: 26px;
+  font-size: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.bluetooth {
-  margin-top: 25px;
-  color: #60a5fa;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.bluetooth-icon {
-  width: 22px;
-  height: 22px;
+.usb {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .subtitle {

@@ -1,5 +1,16 @@
 <script>
   let showInfo = false;
+
+  let weight = 21.4;
+  let maxWeight = 23;
+
+  function addWeight() {
+    weight = Math.min(weight + 1, 40);
+  }
+
+  function removeWeight() {
+    weight = Math.max(weight - 1, 0);
+  }
 </script>
 
 <main class="page">
@@ -9,19 +20,36 @@
     <div class="suitcase">
       <div class="handle"></div>
 
-      <div class="weight-display">
-        Weight: 21.4 kg / 23 kg
+      <div
+        class="weight-display"
+        class:overweight-display={weight > maxWeight}
+      >
+        Weight: {weight.toFixed(1)} kg / {maxWeight} kg
       </div>
 
       <div class="main-display">
         <h3>SmartCase</h3>
 
-        <p class="status">Trip Ready</p>
+        {#if weight > maxWeight}
+          <p class="status overweight-status">⚠ Overweight</p>
+        {:else}
+          <p class="status">✓ Trip Ready</p>
+        {/if}
 
         <div class="info-row">
           <span>Weight</span>
-          <strong>21.4 kg</strong>
+          <strong>{weight.toFixed(1)} kg</strong>
         </div>
+
+        {#if weight > maxWeight}
+          <div class="weight-warning">
+            ⚠ Bag is {(weight - maxWeight).toFixed(1)} kg over the limit
+          </div>
+        {:else}
+          <div class="weight-safe">
+            ✓ {(maxWeight - weight).toFixed(1)} kg remaining
+          </div>
+        {/if}
 
         <div class="info-row">
           <span>Lock</span>
@@ -43,18 +71,18 @@
         <p class="warning">⚠ Headphones missing</p>
 
         <p class="bluetooth">
-  <svg
-    class="bluetooth-icon"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-  >
-    <path d="M7 7l10 10-5 4V3l5 4L7 17" />
-  </svg>
+          <svg
+            class="bluetooth-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M7 7l10 10-5 4V3l5 4L7 17" />
+          </svg>
 
-  Bluetooth Connected
-</p>
+          Bluetooth Connected
+        </p>
       </div>
 
       <div class="side-panel">
@@ -87,8 +115,8 @@
     <h3>Testing Controls</h3>
 
     <div class="testing-buttons">
-      <button>Add Weight</button>
-      <button>Remove Weight</button>
+      <button onclick={addWeight}>Add 1 kg</button>
+      <button onclick={removeWeight}>Remove 1 kg</button>
 
       <button>Remove Item</button>
       <button>Add Item</button>
