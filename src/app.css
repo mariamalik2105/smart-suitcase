@@ -9,115 +9,216 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+
+/* MAIN PAGE */
+
 .page {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   min-height: 100vh;
 }
 
+
+/* DEVICE SIDE */
+
 .device-section {
   padding: 40px;
   background: #e5e7eb;
-}
-
-.testing-section {
-  padding: 40px;
-  background: white;
 }
 
 .device-section h2 {
   margin-top: 0;
 }
 
+
+/* SUITCASE */
+
 .suitcase {
   width: 430px;
-  height: 620px;
-  margin: 60px auto 0;
+  height: 670px;
+
+  margin: 60px auto 30px;
+
   background: #202020;
+
   border-radius: 28px;
+
   position: relative;
+
   padding: 35px;
+
   box-sizing: border-box;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25);
 }
+
+
+/* HANDLE */
 
 .handle {
   position: absolute;
+
   width: 150px;
   height: 120px;
+
   border: 12px solid #252525;
   border-bottom: none;
+
   top: -115px;
   left: 125px;
+
   border-radius: 18px 18px 0 0;
 }
 
+
+/* TOP WEIGHT DISPLAY */
+
 .weight-display {
   background: #111827;
+
   color: white;
+
   padding: 12px;
+
   border-radius: 8px;
+
   text-align: center;
-  margin-bottom: 30px;
+
+  margin-bottom: 20px;
 }
 
 .overweight-display {
   background: #7f1d1d;
-  color: white;
 }
+
+
+/* MAIN SMART DISPLAY */
 
 .main-display {
   background: #111827;
+
   color: white;
+
   border-radius: 16px;
-  padding: 25px;
-  min-height: 410px;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  height: 525px;
+
+  overflow-y: auto;
 }
 
 .main-display h3 {
   margin-top: 0;
+  margin-bottom: 8px;
 }
+
+.main-display h4 {
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+
+/* STATUS */
 
 .status {
   color: #4ade80;
+
   font-weight: bold;
-  font-size: 20px;
+
+  font-size: 19px;
+
+  margin-top: 6px;
 }
 
 .overweight-status {
   color: #f87171;
 }
 
+.packing-status {
+  color: #fb923c;
+}
+
+
+/* INFO ROW */
+
 .info-row {
   display: flex;
+
   justify-content: space-between;
-  margin: 16px 0;
+
+  margin: 11px 0;
 }
+
+
+/* WEIGHT FEEDBACK */
 
 .weight-warning {
   background: #451a1a;
+
   color: #fca5a5;
-  padding: 10px;
+
+  padding: 8px;
+
   border-radius: 8px;
-  margin: 12px 0;
-  font-size: 14px;
+
+  margin: 8px 0;
+
+  font-size: 13px;
 }
 
 .weight-safe {
   color: #4ade80;
-  margin: 10px 0;
-  font-size: 14px;
+
+  margin: 7px 0;
+
+  font-size: 13px;
 }
 
-.warning {
+
+/* PACKING */
+
+.packing-count {
+  color: #9ca3af;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.packing-list p {
+  margin: 7px 0;
+}
+
+.packed-item {
+  color: white;
+}
+
+.missing-item {
   color: #fb923c;
 }
 
+
+/* BLUETOOTH */
+
 .bluetooth {
-  margin-top: 25px;
+  margin-top: 16px;
+
   color: #60a5fa;
+
   display: flex;
+
   align-items: center;
+
   gap: 8px;
 }
 
@@ -126,71 +227,121 @@ button {
   height: 22px;
 }
 
+
+/* SIDE PANEL */
+
 .side-panel {
   position: absolute;
+
   right: -55px;
+
   top: 190px;
+
   width: 55px;
+
   background: #151515;
+
   padding: 10px;
+
   border-radius: 0 12px 12px 0;
+
   box-sizing: border-box;
 }
 
 .side-panel button {
   width: 35px;
   height: 45px;
+
   margin-bottom: 8px;
 }
 
 .find-button {
-  font-size: 32px;
+  font-size: 30px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
 .usb {
   color: white;
+
   font-size: 10px;
+
   text-align: center;
+
   margin-top: 10px;
+}
+
+
+/* TESTING SIDE */
+
+.testing-section {
+  padding: 40px;
+
+  background: white;
+}
+
+.testing-section h1 {
+  margin-bottom: 5px;
 }
 
 .subtitle {
   font-size: 20px;
+
   color: #6b7280;
+
+  margin-top: 0;
 }
 
 .writeup-link {
   display: inline-block;
+
   margin-bottom: 25px;
 }
 
+
+/* TESTING BUTTONS */
+
 .testing-buttons {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 12px;
+
   margin: 20px 0 30px;
 }
 
 .testing-buttons button,
 .info-button {
   padding: 12px;
+
   border: none;
+
   border-radius: 8px;
+
   background: #1f2937;
+
   color: white;
 }
 
-.testing-buttons button:hover,
+.testing-buttons button:hover:not(:disabled),
 .info-button:hover {
   background: #374151;
 }
 
+
+/* INFO BOX */
+
 .info-box {
   margin-top: 20px;
+
   padding: 15px;
+
   border-radius: 8px;
+
   background: #f3f4f6;
 }
