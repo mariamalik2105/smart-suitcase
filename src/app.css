@@ -118,6 +118,27 @@ button {
   margin-top: 10px;
 }
 
+.find-button {
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bluetooth {
+  margin-top: 25px;
+  color: #60a5fa;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bluetooth-icon {
+  width: 22px;
+  height: 22px;
+}
+
 .subtitle {
   font-size: 20px;
   color: #6b7280;

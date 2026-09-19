@@ -42,13 +42,25 @@
         <p>✓ Toiletries</p>
         <p class="warning">⚠ Headphones missing</p>
 
-        <p class="bluetooth">Bluetooth Connected</p>
+        <p class="bluetooth">
+  <svg
+    class="bluetooth-icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path d="M7 7l10 10-5 4V3l5 4L7 17" />
+  </svg>
+
+  Bluetooth Connected
+</p>
       </div>
 
       <div class="side-panel">
         <button>🔒</button>
         <button>✈</button>
-        <button>⌖</button>
+        <button class="find-button">⌖</button>
         <div class="usb">USB-C</div>
       </div>
     </div>
