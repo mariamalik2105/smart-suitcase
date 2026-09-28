@@ -10,7 +10,8 @@
     "Headphones"
   ];
 
-  const writeupUrl = "/SmartCase_Writeup.docx";
+  const readmeUrl = "https://github.com/mariamalik2105/smart-suitcase#readme";
+  const portfolioUrl = "https://sites.google.com/view/mariamalik2105/user-interface-i/smartcase-project";
   const demoUrl = "/SmartCase_Demo.webm";
 
   let showInfo = $state(false);
@@ -951,11 +952,20 @@
 
   <a
     class="writeup-link"
-    href={writeupUrl}
+    href={readmeUrl}
     target="_blank"
     rel="noreferrer"
   >
-    Project Write-Up ↗
+    GitHub README ↗
+  </a>
+
+  <a
+    class="writeup-link"
+    href={portfolioUrl}
+    target="_blank"
+    rel="noreferrer"
+  >
+    Portfolio ↗
   </a>
 
   <a
