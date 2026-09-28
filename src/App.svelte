@@ -37,6 +37,7 @@
 
   let isFinding = $state(false);
 
+  let screenCoverClosed = $state(false);
   let location = $state("With you");
   let bagDistance = $state(1.2);
 
@@ -76,6 +77,14 @@
     !hasMissingItems &&
     isLocked &&
     !isOpen
+  );
+
+  let findStatus = $derived(
+    bagDistance > 20
+      ? "separated"
+      : bagDistance > 5
+        ? "nearby"
+        : "close"
   );
 
 
@@ -260,7 +269,14 @@
       isFinding = false;
     }, 4000);
   }
+  
+  function toggleScreenCover() {
+    screenCoverClosed = !screenCoverClosed;
 
+    notice = screenCoverClosed
+      ? "Protective display cover closed."
+      : "Protective display cover opened.";
+  }
 
   /* ---------------------------
      BATTERY
@@ -797,6 +813,47 @@
 
       </div>
 
+      <!-- PROTECTIVE DISPLAY COVER -->
+
+      <button
+        class="screen-flap"
+        class:screen-flap-closed={screenCoverClosed}
+        class:screen-flap-open={!screenCoverClosed}
+        onclick={toggleScreenCover}
+        title={screenCoverClosed
+          ? "Open protective display cover"
+          : "Close protective display cover"}
+      >
+        {#if screenCoverClosed}
+
+          <div class="flap-closed-content">
+
+            <div class="flap-shield">
+              ◈
+            </div>
+
+            <strong>
+              SmartCase
+            </strong>
+
+            <span>
+              DISPLAY PROTECTED
+            </span>
+
+            <small>
+              Click to open
+            </small>
+
+          </div>
+
+        {:else}
+
+          <span class="flap-open-text">
+            ▾ Protective Screen Cover
+          </span>
+
+        {/if}
+      </button>
 
       <!-- PHYSICAL SIDE CONTROLS -->
 
@@ -823,8 +880,17 @@
 
         <button
           class="physical-button find-button"
+          class:find-close={findStatus === "close"}
+          class:find-nearby={findStatus === "nearby"}
+          class:find-separated={findStatus === "separated"}
           class:find-active={isFinding}
-          title="Find My Bag"
+          title={`Find My Bag — ${
+            findStatus === "close"
+              ? "With You"
+              : findStatus === "nearby"
+                ? "Nearby"
+                : "Separated"
+          }`}
           onclick={findBag}
         >
           ⌖
@@ -1011,6 +1077,12 @@
               Move Bag Closer
             </button>
 
+            <button onclick={toggleScreenCover}>
+              {screenCoverClosed
+                ? "Open Screen Cover"
+                : "Close Screen Cover"}
+            </button>
+
           </div>
 
         </div>
@@ -1121,7 +1193,24 @@
           </div>
 
         </div>
+          <div class="find-status-legend">
 
+            <span>
+              <i class="find-dot find-dot-green"></i>
+              With You
+            </span>
+
+            <span>
+              <i class="find-dot find-dot-yellow"></i>
+              Nearby
+            </span>
+
+            <span>
+              <i class="find-dot find-dot-red"></i>
+              Separated
+            </span>
+
+          </div>
 
         <!-- BATTERY / USB -->
 
@@ -1331,11 +1420,19 @@
             <div
               class="map-card"
               class:map-finding={isFinding}
+              class:map-close={findStatus === "close"}
+              class:map-nearby={findStatus === "nearby"}
+              class:map-separated={findStatus === "separated"}
             >
 
               <div class="map-grid"></div>
 
-              <div class="map-pin">
+              <div
+                class="map-pin"
+                class:pin-close={findStatus === "close"}
+                class:pin-nearby={findStatus === "nearby"}
+                class:pin-separated={findStatus === "separated"}
+              >
                 ●
               </div>
 

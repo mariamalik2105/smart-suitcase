@@ -1328,3 +1328,261 @@ button:disabled {
   align-items: center;
   flex-wrap: wrap;
 }
+
+/* ======================================================
+   PROTECTIVE DISPLAY COVER
+====================================================== */
+
+.screen-flap {
+  position: absolute;
+  left: 30px;
+  width: 410px;
+
+  border: none;
+  color: white;
+
+  z-index: 5;
+
+  cursor: pointer;
+
+  transition:
+    top 0.35s ease,
+    height 0.35s ease,
+    background 0.35s ease,
+    border-radius 0.35s ease;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Covering the screen */
+
+.screen-flap-closed {
+  top: 96px;
+  height: 565px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2b2b2b,
+      #111111
+    );
+
+  border: 2px solid #3f3f46;
+}
+
+
+/* Folded underneath the screen */
+
+.screen-flap-open {
+  top: 667px;
+  height: 32px;
+
+  border-radius: 7px;
+
+  background: #262626;
+}
+
+
+/* Closed cover content */
+
+.flap-closed-content {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.flap-shield {
+  font-size: 34px;
+  color: #94a3b8;
+}
+
+.flap-closed-content strong {
+  font-size: 23px;
+  letter-spacing: 0.03em;
+}
+
+.flap-closed-content span:not(.flap-shield) {
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  letter-spacing: 0.15em;
+}
+
+.flap-closed-content small {
+  margin-top: 7px;
+
+  color: #64748b;
+}
+
+
+/* Open cover */
+
+.flap-open-text {
+  font-size: 9px;
+
+  color: #cbd5e1;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ======================================================
+   FIND MY STATUS COLORS
+====================================================== */
+
+/* Suitcase is close */
+
+.find-close {
+  background: #166534;
+  border-color: #22c55e;
+}
+
+.find-close:hover {
+  background: #15803d;
+}
+
+
+/* Suitcase is nearby */
+
+.find-nearby {
+  background: #a16207;
+  border-color: #facc15;
+}
+
+.find-nearby:hover {
+  background: #ca8a04;
+}
+
+
+/* Suitcase is separated */
+
+.find-separated {
+  background: #991b1b;
+  border-color: #ef4444;
+
+  animation:
+    separatedPulse 1.2s infinite alternate;
+}
+
+.find-separated:hover {
+  background: #b91c1c;
+}
+
+
+/* Glow when Find My is activated */
+
+.find-active {
+  box-shadow:
+    0 0 16px rgba(96, 165, 250, 0.9);
+}
+
+
+@keyframes separatedPulse {
+  from {
+    box-shadow:
+      0 0 3px rgba(239, 68, 68, 0.4);
+  }
+
+  to {
+    box-shadow:
+      0 0 14px rgba(239, 68, 68, 0.95);
+  }
+}
+
+
+/*FIND MY STATUS LEGEND*/
+
+.find-status-legend {
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  margin-top: 12px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.find-status-legend span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.find-dot {
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+}
+
+.find-dot-green {
+  background: #22c55e;
+}
+
+.find-dot-yellow {
+  background: #facc15;
+}
+
+.find-dot-red {
+  background: #ef4444;
+}
+
+/*PHONE FIND MY STATUS COLORS*/
+
+.map-close {
+  border-color: #22c55e;
+}
+
+.map-nearby {
+  border-color: #facc15;
+}
+
+.map-separated {
+  border-color: #ef4444;
+}
+
+.pin-close {
+  background: #22c55e;
+}
+
+.pin-nearby {
+  background: #facc15;
+}
+
+.pin-separated {
+  background: #ef4444;
+
+  animation:
+    phoneSeparatedPulse 1.2s infinite alternate;
+}
+
+@keyframes phoneSeparatedPulse {
+  from {
+    box-shadow:
+      0 0 4px rgba(239, 68, 68, 0.4);
+  }
+
+  to {
+    box-shadow:
+      0 0 18px rgba(239, 68, 68, 0.95);
+  }
+}
