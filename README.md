@@ -1,43 +1,60 @@
-# Svelte + Vite
+# SmartCase
 
-This template should help get you started developing with Svelte in Vite.
+SmartCase is an interactive prototype of a smart carry-on suitcase designed to make traveling easier. The project focuses on common travel problems such as checking luggage weight, keeping track of packed items, locating a bag, and moving heavy luggage through an airport.
 
-## Recommended IDE Setup
+The interface includes both a display built into the suitcase and a connected phone interface.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Features
 
-## Need an official Svelte framework?
+- Built-in weight monitoring with overweight warnings
+- Packing checklist for packed and missing items
+- Lock and unlock controls
+- Open/closed suitcase detection
+- Bluetooth phone connection
+- Find My suitcase tracking
+- Distance-based Find My indicator
+  - Green: suitcase is with you
+  - Yellow: suitcase is nearby
+  - Red: suitcase is separated
+- Follow Mode for hands-free movement
+- Travel Mode
+- Battery monitoring
+- USB-C charging
+- Protective flap over the main display
+- Multiple testing scenarios
+- Airport Follow Mode simulation
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## Testing UI
 
-## Technical considerations
+The right side of the application is used to simulate how SmartCase would behave if it were a real physical product.
 
-**Why use this over SvelteKit?**
+The testing controls can be used to:
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+- Add or remove luggage weight
+- Open and close the suitcase
+- Add or remove packed items
+- Lock and unlock the suitcase
+- Connect or disconnect a phone
+- Change the suitcase's distance from the user
+- Test battery and USB-C charging
+- Activate Travel Mode and Find My
+- Load different travel scenarios
+- Run the Follow Mode airport simulation
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+Changes made in the Testing UI are immediately reflected on the suitcase and phone interfaces.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## Technologies Used
 
-**Why include `.vscode/extensions.json`?**
+- Svelte
+- JavaScript
+- HTML/CSS
+- Vite
+- Git and GitHub
+- Vercel
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+## Running the Project Locally
 
-**Why enable `checkJs` in the JS template?**
+Clone the repository:
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+```bash
+git clone https://github.com/mariamalik2105/smart-suitcase.git
