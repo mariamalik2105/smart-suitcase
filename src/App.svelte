@@ -159,6 +159,15 @@
       : "SmartCase unlocked.";
   }
 
+  function togglePhoneLock() {
+    if (!bluetoothConnected) {
+      notice = "Connect your phone to lock or unlock SmartCase.";
+      return;
+    }
+
+    toggleLock();
+  }
+
 
   /* ---------------------------
      OPEN / CLOSE SENSOR
@@ -218,6 +227,14 @@
     }
   }
 
+  function togglePhoneTravelMode() {
+    if (!bluetoothConnected) {
+      notice = "Connect your phone to control Travel Mode.";
+      return;
+    }
+
+    toggleTravelMode();
+  }
 
   /* ---------------------------
      FOLLOW MODE
@@ -297,11 +314,6 @@
     battery = Math.min(battery + 10, 100);
     notice = `SmartCase battery charged to ${battery}%.`;
   }
-
-
-  /* ---------------------------
-     USB-C CHARGING
-  ---------------------------- */
 
   function chargePhone() {
     if (battery < 5) {
@@ -1240,8 +1252,13 @@
               Charge 10%
             </button>
 
-            <button onclick={chargePhone}>
-              Charge Phone via USB-C
+            <button
+              onclick={chargePhone}
+              disabled={usbCharging || phoneBattery >= 100 || battery < 5}
+            >
+              {usbCharging
+                ? "Charging Phone..."
+                : "Charge Phone via USB-C"}
             </button>
 
           </div>
@@ -1485,8 +1502,13 @@
 
             <div class="phone-controls">
 
-              <button onclick={toggleLock}>
-                {isLocked ? "🔓 Unlock" : "🔒 Lock"}
+              <button
+                onclick={togglePhoneLock}
+                disabled={!bluetoothConnected}
+              >
+                {isLocked
+                  ? "🔓 Unlock"
+                  : "🔒 Lock"}
               </button>
 
               <button onclick={findBag}>
@@ -1501,6 +1523,16 @@
                 {followMode
                   ? "■ Stop Following"
                   : "➜ Follow Mode"}
+              </button>
+
+              <button
+                class:active-button={travelMode}
+                onclick={togglePhoneTravelMode}
+                disabled={!bluetoothConnected}
+              >
+                {travelMode
+                  ? "✈ Disable Travel Mode"
+                  : "✈ Travel Mode"}
               </button>
 
             </div>
