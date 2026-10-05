@@ -37,11 +37,11 @@ button:disabled {
   display: grid;
 
   grid-template-columns:
-    600px
-    minmax(850px, 1fr);
+    550px
+    minmax(0, 1fr);
 
   min-height: 100vh;
-  min-width: 1450px;
+  width: 100%;
 }
 
 
@@ -49,7 +49,17 @@ button:disabled {
    /*DEVICE SECTION*/
 
 .device-section {
-  padding: 40px 50px 80px;
+  padding: 40px 25px 80px;
+
+  min-width: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e5e7eb,
+      #d1d5db
+    );
+}
 
   background:
     linear-gradient(
@@ -86,7 +96,8 @@ button:disabled {
    /*SUITCASE BODY*/
 
 .suitcase {
-  position: relative;
+  position: sticky;
+  top: 125px;
 
   width: 470px;
   height: 720px;
@@ -616,7 +627,9 @@ button:disabled {
 
 .testing-section {
   padding:
-    42px 50px 80px;
+    42px 30px 80px;
+
+  min-width: 0;
 
   background: white;
 }
@@ -631,7 +644,9 @@ button:disabled {
 
   align-items: flex-start;
 
-  gap: 30px;
+  gap: 20px;
+
+  flex-wrap: wrap;
 }
 
 .project-header h1 {
@@ -713,12 +728,14 @@ button:disabled {
   display: grid;
 
   grid-template-columns:
-    minmax(480px, 1fr)
-    330px;
+    minmax(0, 1fr)
+    290px;
 
-  gap: 35px;
+  gap: 24px;
 
   align-items: start;
+
+  min-width: 0;
 }
 
 
@@ -942,6 +959,7 @@ button:disabled {
 
 .phone {
   width: 310px;
+  max-width: 290px;
 
   padding:
     12px;
@@ -1134,6 +1152,7 @@ button:disabled {
   from {
     transform: scale(1);
   }
+
 
   to {
     transform: scale(1.25);
@@ -1586,3 +1605,4 @@ button:disabled {
       0 0 18px rgba(239, 68, 68, 0.95);
   }
 }
+
