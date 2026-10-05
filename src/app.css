@@ -45,28 +45,18 @@ button:disabled {
 }
 
 
-
-   /*DEVICE SECTION*/
+/* DEVICE SECTION */
 
 .device-section {
   padding: 40px 25px 80px;
 
   min-width: 0;
 
-  background:
-    linear-gradient(
-      145deg,
-      #e5e7eb,
-      #d1d5db
-    );
-}
-
-  background:
-    linear-gradient(
-      145deg,
-      #e5e7eb,
-      #d1d5db
-    );
+  background: linear-gradient(
+    145deg,
+    #e5e7eb,
+    #d1d5db
+  );
 }
 
 .section-heading {
